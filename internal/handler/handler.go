@@ -14,7 +14,10 @@ func GetReview() func(*fiber.Ctx) {
 
 		w := worker.NewReview(conf.DB)
 		w.Get(context.TODO(), "1")
-		c.Next(model.NewError(fiber.StatusOK, "a", "b"))
+		if 1 == 1 {
+			c.Next(model.NewError(fiber.StatusUnprocessableEntity, "error", "debug naja"))
+			return
+		}
 
 		c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"message": "ok",
