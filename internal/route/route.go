@@ -38,7 +38,7 @@ func New(conf *model.Conf) *fiber.App {
 		c.Next()
 	})
 
-	app.Get("/_/heath", func(c *fiber.Ctx) {
+	app.Get("/_/health", func(c *fiber.Ctx) {
 		c.SendStatus(fiber.StatusOK)
 	})
 

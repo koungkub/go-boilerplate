@@ -25,7 +25,7 @@ func NewLog(svc string) *logrus.Entry {
 func NewDB(driver, dsn string) (*sql.DB, error) {
 	db, err := sql.Open(driver, dsn)
 	if err != nil {
-		return nil, errors.Wrap(err, "prepare dsn")
+		return nil, errors.Wrap(err, "[NewDB] prepare dsn")
 	}
 
 	// db.SetMaxOpenConns()
